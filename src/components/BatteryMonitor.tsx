@@ -12,27 +12,27 @@ const BatteryMonitor: React.FC<BatteryMonitorProps> = ({ vehicle }) => {
 
   return (
     <div className="battery-monitor">
-      <h2>Battery Monitor</h2>
+      <h2>Battery</h2>
       <div
         className="battery-icon"
         style={{
           position: 'relative',
           width: '200px',
           height: '40px',
-          border: '2px solid #ccc',
-          borderRadius: '5px',
+          border: '3px solid #ccc',
+          borderRadius: '8px',
           margin: '20px auto'
         }}
       >
         <div
           style={{
             position: 'absolute',
-            top: 0,
-            left: 0,
-            height: '100%',
-            width: `${fillPercentage}%`,
+            top: '3px',
+            left: '3px',
+            height: 'calc(100% - 6px)',
+            width: `calc(${fillPercentage}% - 6px)`,
             background: '#ccc',
-            borderRadius: '3px 0 0 3px'
+            borderRadius: '5px 0 0 5px'
           }}
         />
         <div
@@ -42,13 +42,16 @@ const BatteryMonitor: React.FC<BatteryMonitorProps> = ({ vehicle }) => {
             left: '50%',
             transform: 'translate(-50%, -50%)',
             color: '#222',
-            fontWeight: 'bold'
+            fontWeight: 'bold',
+            fontSize: '1.2em'
           }}
         >
           {fillPercentage.toFixed(0)}%
         </div>
       </div>
-      <p>Current Charge: {vehicle.currentCharge} kWh / {vehicle.batteryCapacity} kWh</p>
+      <p style={{ fontSize: '1.2em', lineHeight: '1.4', margin: '5px 0' }}>
+        {vehicle.currentCharge.toFixed(1)} / {vehicle.batteryCapacity.toFixed(1)} kWh
+      </p>
     </div>
   );
 };

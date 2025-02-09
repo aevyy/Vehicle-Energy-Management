@@ -97,11 +97,11 @@ const App: React.FC = () => {
         </div>
         
         {demoVehicle ? (
-          <>
+          <div className="data-grid">
             <BatteryMonitor vehicle={demoVehicle} />
             <EnergyDashboard vehicle={demoVehicle} />
             <EnergyConsumptionChart vehicle={demoVehicle} />
-          </>
+          </div>
         ) : (
           <p>Please connect your vehicle to see data.</p>
         )}

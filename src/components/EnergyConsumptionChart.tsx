@@ -14,16 +14,16 @@ const EnergyConsumptionChart: React.FC<EnergyConsumptionChartProps> = ({ vehicle
   }));
 
   return (
-    <div className="energy-consumption-chart" style={{ margin: '20px auto', width: '90%', maxWidth: '800px' }}>
-      <h2>Energy Consumption Over Time</h2>
-      <ResponsiveContainer width="100%" height={300}>
-        <LineChart data={data} margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
+    <div className="energy-consumption-chart">
+      <h2>Consumption</h2>
+      <ResponsiveContainer width="100%" height={200}>
+        <LineChart data={data} margin={{ top: 10, right: 10, left: 10, bottom: 10 }}>
           <CartesianGrid strokeDasharray="3 3" stroke="#ccc" />
-          <XAxis dataKey="time" stroke="#ccc" />
-          <YAxis stroke="#ccc" />
-          <Tooltip contentStyle={{ backgroundColor: '#222', border: 'none', color: '#ccc' }} itemStyle={{ color: '#ccc' }} cursor={{ stroke: '#ccc', strokeWidth: 2 }} />
-          <Legend wrapperStyle={{ color: '#ccc' }} />
-          <Line type="monotone" dataKey="consumption" stroke="#ccc" activeDot={{ r: 8 }} />
+          <XAxis dataKey="time" stroke="#ccc" fontSize="0.8em" />
+          <YAxis stroke="#ccc" fontSize="0.8em" />
+          <Tooltip contentStyle={{ backgroundColor: '#222', border: 'none', color: '#ccc', fontSize: '0.8em' }} itemStyle={{ color: '#ccc' }} cursor={{ stroke: '#ccc', strokeWidth: 1 }} />
+          <Legend wrapperStyle={{ color: '#ccc', fontSize: '0.8em' }} />
+          <Line type="monotone" dataKey="consumption" stroke="#ccc" strokeWidth={1} activeDot={{ r: 4 }} />
         </LineChart>
       </ResponsiveContainer>
     </div>

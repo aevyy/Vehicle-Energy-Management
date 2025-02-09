@@ -9,13 +9,16 @@ interface EnergyDashboardProps {
 const EnergyDashboard: React.FC<EnergyDashboardProps> = ({ vehicle }) => {
   return (
     <div className="energy-dashboard">
-      <h2>Energy Dashboard</h2>
-      {/* Display the vehicle's current charge */}
-      <p>Current Charge: {vehicle.currentCharge} kWh</p>
-      {/* Display the vehicle's battery capacity */}
-      <p>Battery Capacity: {vehicle.batteryCapacity} kWh</p>
-      {/* Display the vehicle's average energy consumption */}
-      <p>Average Consumption: {vehicle.averageConsumption} kWh/100km</p>
+      <h2>Energy</h2>
+      <p style={{ fontSize: '1.2em', lineHeight: '1.4', margin: '5px 0' }}>
+        Current: {vehicle.currentCharge.toFixed(1)} kWh
+      </p>
+      <p style={{ fontSize: '1.2em', lineHeight: '1.4', margin: '5px 0' }}>
+        Capacity: {vehicle.batteryCapacity.toFixed(1)} kWh
+      </p>
+      <p style={{ fontSize: '1.2em', lineHeight: '1.4', margin: '5px 0' }}>
+        Avg Consumption: {vehicle.averageConsumption.toFixed(1)} kWh/100km
+      </p>
     </div>
   );
 };
