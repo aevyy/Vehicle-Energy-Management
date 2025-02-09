@@ -11,16 +11,20 @@ import EnergyConsumptionChart from './components/EnergyConsumptionChart';
 import './App.css';
 
 const App: React.FC = () => {
-  // Remove default demoVehicle; start with null until connected
+  // State variable to store the connected vehicle data
   const [demoVehicle, setDemoVehicle] = useState<Vehicle | null>(null);
 
+  // State variables for location data and nearby charging stations
   const [currentLocation, setCurrentLocation] = useState<[number, number] | null>(null);
   const [nearbyChargingStations, setNearbyChargingStations] = useState<ChargingStation[]>([]);
   const [isLocating, setIsLocating] = useState<boolean>(false);
   const [locationError, setLocationError] = useState<string | null>(null);
+
+  // State variables for vehicle connectivity
   const [isConnecting, setIsConnecting] = useState<boolean>(false);
   const [connectionStatus, setConnectionStatus] = useState<string | null>(null);
 
+  // Fetch the user's current location
   const fetchLocation = async () => {
     setIsLocating(true);
     setLocationError(null);
@@ -35,6 +39,7 @@ const App: React.FC = () => {
     }
   };
 
+  // Handle the vehicle connection process
   const handleConnectVehicle = async () => {
     setIsConnecting(true);
     setConnectionStatus(null);
@@ -54,10 +59,12 @@ const App: React.FC = () => {
     }
   };
 
+  // Fetch the user's location on component mount
   useEffect(() => {
     fetchLocation();
   }, []);
 
+  // Update nearby charging stations when the user's location changes
   useEffect(() => {
     if (currentLocation) {
       const mockChargingStations: ChargingStation[] = [

@@ -7,6 +7,7 @@ interface BatteryMonitorProps {
 }
 
 const BatteryMonitor: React.FC<BatteryMonitorProps> = ({ vehicle }) => {
+  // Calculate the battery fill percentage based on current charge and capacity
   const fillPercentage = Math.min(100, (vehicle.currentCharge / vehicle.batteryCapacity) * 100);
 
   return (
@@ -18,7 +19,7 @@ const BatteryMonitor: React.FC<BatteryMonitorProps> = ({ vehicle }) => {
           position: 'relative',
           width: '200px',
           height: '40px',
-          border: '2px solid #33ff33',
+          border: '2px solid #ccc',
           borderRadius: '5px',
           margin: '20px auto'
         }}
@@ -30,7 +31,7 @@ const BatteryMonitor: React.FC<BatteryMonitorProps> = ({ vehicle }) => {
             left: 0,
             height: '100%',
             width: `${fillPercentage}%`,
-            background: '#33ff33',
+            background: '#ccc',
             borderRadius: '3px 0 0 3px'
           }}
         />
@@ -40,7 +41,7 @@ const BatteryMonitor: React.FC<BatteryMonitorProps> = ({ vehicle }) => {
             top: '50%',
             left: '50%',
             transform: 'translate(-50%, -50%)',
-            color: '#000',
+            color: '#222',
             fontWeight: 'bold'
           }}
         >

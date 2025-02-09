@@ -1,11 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 
 /* src/App.css */
 
 .App {
-  background-color: #000;
-  color: #33ff33;
-  font-family: 'Orbitron', sans-serif;
+  background-color: #222;
+  color: #ccc;
+  font-family: 'VT323', monospace;
   padding: 20px;
   min-height: 100vh;
   display: flex;
@@ -16,15 +16,15 @@
 }
 
 h1, h2, h3 {
-  border-bottom: 1px solid #33ff33;
+  border-bottom: 1px solid #ccc;
   padding-bottom: 5px;
   margin: 20px 0;
 }
 
 button {
   background: none;
-  border: 1px solid #33ff33;
-  color: #33ff33;
+  border: 1px solid #ccc;
+  color: #ccc;
   padding: 10px 20px;
   cursor: pointer;
   transition: background 0.3s, color 0.3s;
@@ -33,26 +33,26 @@ button {
 }
 
 button:hover {
-  background: #33ff33;
-  color: #000;
+  background: #ccc;
+  color: #222;
 }
 
 .connectivity-section, .location-section, .charging-stations {
   margin: 20px 0;
   padding: 10px;
-  border: 1px dashed #33ff33;
+  border: 1px dashed #ccc;
   width: 90%;
   max-width: 600px;
 }
 
 .error {
-  color: #ff3333;
+  color: #ff4d4d;
 }
 
 /* Additional retro effect for the app, such as a slight green glow text effect */
 
 .App, button, h1, h2, h3, p {
-  text-shadow: 0 0 5px #33ff33;
+  text-shadow: 0 0 5px #ccc;
 }
 
 /* Scrollbar style for a retro Linux terminal feeling */
@@ -62,10 +62,10 @@ button:hover {
 }
 
 ::-webkit-scrollbar-track {
-  background: #000;
+  background: #222;
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #33ff33;
-  border: 3px solid #000;
+  background-color: #ccc;
+  border: 3px solid #222;
 } 
